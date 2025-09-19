@@ -1,0 +1,188 @@
+/* CSS Variables for colors and fonts */
+:root {
+    --deep-red: #9A1721; /* Warna merah yang lebih modern */
+    --white: #FFFFFF;
+    --light-gray: #F0F2F5;
+    --text-color: #333333;
+    --text-light: #777777;
+    --font-family: 'Inter', sans-serif;
+    --container-width: 900px;
+}
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--light-gray);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+h1 { font-size: 3.5rem; font-weight: 900; line-height: 1.1; }
+h2 { font-size: 2rem; border-bottom: 3px solid var(--deep-red); padding-bottom: 0.5rem; display: inline-block; }
+h3 { font-size: 1.25rem; }
+h4 { font-size: 1.1rem; }
+p { margin-bottom: 1rem; }
+
+/* Prose style for markdown content */
+.prose {
+    max-width: 65ch; /* Ideal reading line length */
+}
+.prose p { color: var(--text-light); }
+.prose ul, .prose ol { padding-left: 20px; }
+.prose strong { color: var(--text-color); }
+
+/* Fade-in Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Sections */
+section {
+    padding: 4rem 0;
+    border-bottom: 1px solid #ddd;
+}
+section:last-of-type {
+    border-bottom: none;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 6rem 0;
+}
+.hero .tagline {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+}
+.hero-contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.btn {
+    display: inline-block;
+    background-color: var(--deep-red);
+    color: var(--white);
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+.btn:hover {
+    transform: scale(1.05);
+    background-color: #7c121a;
+}
+.social-link {
+    color: var(--deep-red);
+    text-decoration: none;
+    font-weight: 700;
+}
+.social-link:hover {
+    text-decoration: underline;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 2rem;
+}
+.skill-item {
+    background-color: var(--white);
+    border: 1px solid #eee;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+@media (min-width: 768px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+.project-card {
+    background-color: var(--white);
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.07);
+}
+.project-card h3 {
+    color: var(--deep-red);
+}
+.project-card p {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+}
+.project-tags span {
+    background-color: var(--light-gray);
+    color: var(--text-light);
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+}
+
+/* Experience */
+.experience-item {
+    margin-top: 2rem;
+}
+.experience-item .period {
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    color: var(--text-light);
+}
